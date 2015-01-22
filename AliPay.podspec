@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AliPay"
-  s.version      = "2.1.2"
+  s.version      = "2.1.2.1"
   s.summary      = "支付宝 sdk"
 
   s.description  = <<-DESC
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/beiliubei/AliPay.git", :tag => "2.1.2" }
+  s.source       = { :git => "https://github.com/beiliubei/AliPay.git", :tag => "2.1.2.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -89,11 +89,13 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files = 'AliPay-Extend'
+  s.source_files = 'AliPay-Extend/Util/*.{h,m}', 'AliPay-Extend/*.{h,m}'
 
-  s.vendored_frameworks = "AlipaySDK.framework"
+  s.vendored_frameworks = 'AlipaySDK.framework'
 
-  s.public_header_files = "AlipaySDK.framework/Headers/**/*.h"
+  s.vendored_libraries = 'AliPay-Extend/libcrypto.a', 'AliPay-Extend/libssl.a'
+
+  s.public_header_files = "AlipaySDK.framework/Headers/**/*.h', 'AliPay-Extend/openssl/*.h"
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
