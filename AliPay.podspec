@@ -89,6 +89,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
+  s.source_files = 'AliPay-Extend'
+
   s.vendored_frameworks = "AlipaySDK.framework"
 
   s.public_header_files = "AlipaySDK.framework/Headers/**/*.h"
