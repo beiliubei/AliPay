@@ -89,13 +89,24 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files = 'AliPay-Extend/Util/*.{h,m}', 'AliPay-Extend/*.{h,m}'
-
   s.vendored_frameworks = 'AlipaySDK.framework'
 
   s.vendored_libraries = 'AliPay-Extend/libcrypto.a', 'AliPay-Extend/libssl.a'
 
-  s.public_header_files = "AlipaySDK.framework/Headers/**/*.h', 'AliPay-Extend/openssl/*.h"
+  s.public_header_files = "AlipaySDK.framework/Headers/**/*.h", "openssl/*.h"
+
+  s.subspec "AliPay-Extend" do |ae|
+    ae.source_files = "AliPay-Extend"
+    ae.subspec "Util" do |u|
+      u.source_files = "AliPay-Extend/Util"
+    end
+  end
+
+  s.subspec "openssl" do |ssl|
+    ssl.source_files = "openssl"
+    ssl.header_dir = "openssl"
+  end
+
 
 
   # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -119,7 +130,7 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  s.frameworks = "CoreTelephony", "SystemConfiguration"
+  s.frameworks = "SystemConfiguration"
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
