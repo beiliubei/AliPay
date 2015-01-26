@@ -60,7 +60,7 @@ int base64_self_test( int verbose );
 #endif
 
 
-@interface Base64 : NSObject
+@interface AlipayBase64 : NSObject
 
 + (NSData *)decodeString:(NSString *)string;
 

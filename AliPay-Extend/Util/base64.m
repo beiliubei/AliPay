@@ -179,7 +179,7 @@ int base64_decode( unsigned char *dst, int *dlen,
     return( 0 );
 }
 
-@implementation Base64
+@implementation AlipayBase64
 
 + (NSData *)decodeString:(NSString *)string {
 	
