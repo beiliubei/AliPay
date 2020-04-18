@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AliPay"
-  s.version      = "2.1.2.1"
+  s.version      = "15.7.4.1"
   s.summary      = "支付宝 sdk"
 
   s.description  = <<-DESC
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "5.0"
+  s.platform     = :ios, "6.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/beiliubei/AliPay.git", :tag => "2.1.2.1" }
+  s.source       = { :git => "https://github.com/beiliubei/AliPay.git", :tag => "15.7.4.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
