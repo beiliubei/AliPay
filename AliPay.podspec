@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "AliPay"
-  s.version      = "15.7.4.1"
+  s.version      = "15.7.4.2"
   s.summary      = "支付宝 sdk"
 
   s.description  = <<-DESC
@@ -78,9 +78,10 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/beiliubei/AliPay.git", :tag => "15.7.4.1" }
+  s.source       = { :git => "https://github.com/beiliubei/AliPay.git", :tag => "15.7.4.2" }
 
 
+  #s.source = {:git=>"/Volumes/data/work/github/AliPay"}
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  CocoaPods is smart about how it includes source code. For source files
@@ -91,21 +92,20 @@ Pod::Spec.new do |s|
 
   s.vendored_frameworks = 'AlipaySDK.framework'
 
-  s.vendored_libraries = 'AliPay-Extend/libcrypto.a', 'AliPay-Extend/libssl.a'
+  #s.vendored_libraries = 'AliPay-Extend/libcrypto.a', 'AliPay-Extend/libssl.a'
 
-  s.public_header_files = "AlipaySDK.framework/Headers/**/*.h", "openssl/*.h"
+  #s.public_header_files = "AlipaySDK.framework/Headers/**/*.h", "openssl/*.h"
+  #s.subspec "AliPay-Extend" do |ae|
+  #  ae.source_files = "AliPay-Extend"
+  #  ae.subspec "Util" do |u|
+  #    u.source_files = "AliPay-Extend/Util"
+  #  end
+  #end
 
-  s.subspec "AliPay-Extend" do |ae|
-    ae.source_files = "AliPay-Extend"
-    ae.subspec "Util" do |u|
-      u.source_files = "AliPay-Extend/Util"
-    end
-  end
-
-  s.subspec "openssl" do |ssl|
-    ssl.source_files = "openssl"
-    ssl.header_dir = "openssl"
-  end
+  #s.subspec "openssl" do |ssl|
+  #  ssl.source_files = "openssl"
+  #  ssl.header_dir = "openssl"
+  #end
 
 
 
@@ -130,11 +130,12 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  s.frameworks = "SystemConfiguration"
+  #s.frameworks = "SystemConfiguration"
+  s.frameworks            = 'SystemConfiguration', 'CoreTelephony', 'QuartzCore', 'CoreText', 'CoreGraphics', 'UIKit', 'Foundation','CFNetwork', 'CoreMotion', 'WebKit'
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
-
+     s.libraries             = 'z', 'c++'
 
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
